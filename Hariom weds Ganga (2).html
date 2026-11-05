@@ -1,0 +1,568 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hariom weds Ganga</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Hind:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<style>
+/* Layout: one-page invitation. Centered ceremonial hero under a marigold toran, then a dated vertical timeline of rituals, ending with the barat destination and a share block. Single deliberate look: night maroon with marigold and gold (a wedding card, not a theme-able app). */
+:root {
+  --bg: #260610;
+  --bg-2: #3a0a17;
+  --sindoor: #d4401f;
+  --marigold: #f4a81d;
+  --gold: #ecc977;
+  --ivory: #fbefd9;
+  --muted: #d7b79e;
+  --leaf: #7f9a3c;
+  --line: rgba(236, 201, 119, 0.35);
+  --f-display: "Yatra One", "Noto Serif Devanagari", Georgia, serif;
+  --f-body: "Hind", "Noto Sans Devanagari", system-ui, sans-serif;
+  --f-accent: "Cormorant Garamond", Georgia, serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ivory);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+.wrap {
+  width: 100%;
+  max-width: 820px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  position: relative;
+  z-index: 1;
+}
+#petals { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+/* Toran */
+.toran { display: block; width: 100%; height: 76px; transform-origin: top center; animation: sway 6s ease-in-out infinite; }
+@keyframes sway { 0%,100% { transform: rotate(-0.5deg); } 50% { transform: rotate(0.5deg); } }
+
+/* Hero */
+.hero { position: relative; text-align: center; padding-block: 28px 56px; }
+.mandala { position: absolute; left: 50%; top: 40%; width: min(130vw, 760px); aspect-ratio: 1; transform: translate(-50%, -50%); opacity: 0.5; z-index: 0; max-width: none; pointer-events: none; }
+.mandala svg { width: 100%; height: 100%; animation: spin 160s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero > *:not(.mandala) { position: relative; z-index: 1; }
+.shree { font-family: var(--f-display); color: var(--marigold); font-size: clamp(1.1rem, 4.5vw, 1.5rem); letter-spacing: 0.04em; }
+.diya-top { width: 56px; margin: 6px auto 0; display: block; color: var(--marigold); }
+.flame { transform-origin: 50% 100%; animation: flicker 1.8s ease-in-out infinite; }
+@keyframes flicker { 0%,100% { transform: scale(1, 1) rotate(-1deg); } 35% { transform: scale(0.92, 1.08) rotate(1.5deg); } 70% { transform: scale(1.05, 0.95) rotate(-1.5deg); } }
+.invite-line { color: var(--muted); max-width: 30em; margin: 14px auto 0; font-size: 1rem; }
+.names { margin: 18px 0 0; font-family: var(--f-display); font-weight: 400; line-height: 1.05; text-wrap: balance; }
+.names .n { display: block; font-size: clamp(3.6rem, 17vw, 7rem); color: var(--ivory); text-shadow: 0 2px 0 rgba(0,0,0,.35); }
+.names .n.g { color: var(--marigold); }
+.names .weds { display: block; font-family: var(--f-accent); font-style: italic; font-weight: 600; font-size: clamp(1.6rem, 6vw, 2.4rem); color: var(--gold); margin: 6px 0; }
+.latin { font-family: var(--f-accent); font-style: italic; font-weight: 500; color: var(--muted); font-size: 1.15rem; margin-top: 18px; letter-spacing: 0.02em; }
+.range { display: inline-flex; gap: 10px; align-items: center; margin-top: 22px; padding: 10px 20px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold); font-weight: 500; letter-spacing: 0.04em; background: rgba(38,6,16,.6); flex-wrap: wrap; justify-content: center; }
+
+/* Countdown */
+.count { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 460px; margin: 34px auto 0; }
+.count div { padding: 12px 4px 10px; border: 1px solid var(--line); background: rgba(58,10,23,.75); text-align: center; border-radius: 4px; }
+.count b { display: block; font-family: var(--f-display); font-weight: 400; font-size: clamp(1.7rem, 8vw, 2.4rem); color: var(--marigold); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.count span { font-size: .82rem; color: var(--muted); letter-spacing: .06em; }
+.count-cap { margin-top: 12px; color: var(--muted); font-size: .95rem; }
+
+/* Section head */
+.sec-head { text-align: center; padding-block: 24px 8px; }
+.sec-head h2 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(1.9rem, 7vw, 2.8rem); color: var(--gold); text-wrap: balance; }
+.sec-head p { margin: 6px 0 0; color: var(--muted); }
+.divider { display: block; width: 180px; height: 18px; margin: 12px auto 0; color: var(--marigold); }
+
+/* Timeline */
+.timeline { list-style: none; margin: 28px 0 0; padding: 0; position: relative; display: grid; gap: 28px; }
+.timeline::before { content: ""; position: absolute; left: 37px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--line), var(--marigold) 50%, var(--line)); }
+.day { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 18px; position: relative; }
+.date { position: relative; z-index: 1; width: 76px; text-align: center; align-self: start; padding: 10px 0 8px; background: var(--bg-2); border: 1px solid var(--marigold); border-radius: 38px 38px 8px 8px; }
+.date b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 2rem; line-height: 1; color: var(--marigold); font-variant-numeric: tabular-nums; }
+.date span { display: block; font-size: .78rem; color: var(--ivory); line-height: 1.3; margin-top: 2px; }
+.date small { display: block; font-size: .72rem; color: var(--muted); }
+.cards { display: grid; gap: 14px; min-width: 0; }
+.card { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: center; padding: 16px 16px 16px 14px; background: linear-gradient(160deg, var(--bg-2), #300812); border: 1px solid var(--line); border-radius: 6px; transition: transform .3s ease, border-color .3s ease; }
+.card:hover { transform: translateY(-3px); border-color: var(--marigold); }
+.card .ico { width: 56px; height: 56px; color: var(--marigold); }
+.card h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 1.35rem; line-height: 1.3; color: var(--ivory); text-wrap: balance; }
+.card .en { margin: 0; font-family: var(--f-accent); font-style: italic; font-weight: 500; color: var(--gold); font-size: 1.05rem; line-height: 1.3; }
+.card .when { margin: 6px 0 0; display: inline-block; font-size: .88rem; color: var(--marigold); border: 1px solid var(--line); padding: 1px 10px; border-radius: 999px; }
+.card.big { border-color: var(--marigold); background: linear-gradient(160deg, #4a0e1a, #340a14); }
+
+/* Barat */
+.barat { margin-top: 56px; text-align: center; padding: 34px 20px; border: 1px solid var(--line); border-radius: 6px; background: radial-gradient(120% 120% at 50% 0%, #4a0e1a, var(--bg-2)); }
+.barat .dhol { width: 86px; margin: 0 auto; color: var(--marigold); display: block; animation: bob 1.2s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-6px) rotate(2deg); } }
+.barat h2 { margin: 8px 0 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(1.7rem, 6vw, 2.3rem); color: var(--ivory); }
+.barat .village { font-family: var(--f-display); font-size: clamp(2.2rem, 9vw, 3.4rem); color: var(--marigold); line-height: 1.2; margin: 6px 0 0; }
+.barat p { margin: 8px 0 0; color: var(--muted); }
+
+/* Footer */
+.foot { text-align: center; padding-block: 56px 72px; }
+.foot h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.7rem, 6vw, 2.3rem); color: var(--gold); margin: 0; text-wrap: balance; }
+.foot p { color: var(--muted); max-width: 28em; margin: 10px auto 0; }
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font: 600 1rem var(--f-body); text-decoration: none; cursor: pointer; border: 1px solid var(--marigold); color: var(--bg); background: var(--marigold); transition: transform .2s ease, background .2s ease; }
+.btn:hover { transform: translateY(-2px); background: var(--gold); }
+.btn.ghost { background: transparent; color: var(--marigold); }
+.btn.ghost:hover { background: rgba(244,168,29,.12); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.copied { min-height: 1.5em; margin-top: 10px; color: var(--gold); font-size: .95rem; }
+
+/* Arch frame, shimmer, lights, scene */
+.arch { position: relative; margin: 30px auto 0; max-width: 460px; padding: 150px 30px 48px; }
+.arch-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; filter: drop-shadow(0 0 18px rgba(244,168,29,.28)); }
+.arch > *:not(.arch-svg) { position: relative; z-index: 1; }
+.arch .diya-top { position: absolute; top: 80px; left: 50%; transform: translateX(-50%); width: 58px; margin: 0; filter: drop-shadow(0 0 12px rgba(244,168,29,.8)); }
+.arch .names { margin-top: 0; }
+.names .n {
+  background: linear-gradient(100deg, #fbefd9 0%, #ecc977 30%, #f4a81d 50%, #ecc977 70%, #fbefd9 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  animation: shine 5s linear infinite;
+}
+@keyframes shine { to { background-position: -250% 0; } }
+.lights { display: block; width: 100%; height: 34px; margin-top: -4px; animation: glowpulse 2.4s ease-in-out infinite; position: relative; z-index: 1; }
+@keyframes glowpulse { 0%,100% { opacity: .65; filter: drop-shadow(0 0 3px #f4a81d); } 50% { opacity: 1; filter: drop-shadow(0 0 9px #ffd36b); } }
+.hero > .star { position: absolute; border-radius: 50%; background: var(--gold); z-index: 0; animation: twinkle 3s ease-in-out infinite; }
+@keyframes twinkle { 0%,100% { opacity: .1; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.5); } }
+.card .ico { animation: icoglow 3.2s ease-in-out infinite; }
+@keyframes icoglow { 0%,100% { filter: drop-shadow(0 0 0 rgba(244,168,29,0)); } 50% { filter: drop-shadow(0 0 8px rgba(244,168,29,.75)); } }
+.scene { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 14px; }
+.march { animation: march 18s linear infinite; }
+@keyframes march { from { transform: translateX(-250px); } to { transform: translateX(900px); } }
+.hb { animation: hbob .5s ease-in-out infinite alternate; }
+@keyframes hbob { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+.leg { transform-box: fill-box; transform-origin: 50% 0; animation: leg .5s ease-in-out infinite alternate; }
+.leg.b { animation-delay: -.5s; }
+@keyframes leg { from { transform: rotate(-20deg); } to { transform: rotate(20deg); } }
+.win { animation: winflick 2.5s ease-in-out infinite; }
+.win.w2 { animation-delay: -1.2s; }
+@keyframes winflick { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+.tw { animation: tw2 3s ease-in-out infinite; }
+.tw.t2 { animation-delay: -1s; } .tw.t3 { animation-delay: -2s; }
+@keyframes tw2 { 0%,100% { opacity: .15; } 50% { opacity: 1; } }
+.sun-rays { transform-box: fill-box; transform-origin: center; animation: spin 50s linear infinite; }
+.flagwave { transform-box: fill-box; transform-origin: 0 50%; animation: wave 1.6s ease-in-out infinite alternate; }
+@keyframes wave { from { transform: skewY(-8deg) scaleX(1); } to { transform: skewY(8deg) scaleX(.85); } }
+@media (prefers-reduced-motion: reduce) {
+  .names .n { animation: none; }
+  .lights, .card .ico, .hb, .leg, .win, .tw, .sun-rays, .flagwave, .hero > .star { animation: none; }
+  .march { animation: none; transform: translateX(380px); }
+}
+
+/* Reveal */
+.rv { transition: opacity .8s ease, transform .8s ease; }
+.rv.hide { opacity: 0; transform: translateY(24px); }
+
+@media (min-width: 640px) {
+  body { font-size: 18px; }
+  .timeline::before { left: 47px; }
+  .day { grid-template-columns: 96px minmax(0, 1fr); gap: 26px; }
+  .date { width: 96px; border-radius: 48px 48px 8px 8px; padding-top: 14px; }
+  .date b { font-size: 2.5rem; }
+  .card { padding: 20px 22px 20px 18px; gap: 18px; grid-template-columns: 64px minmax(0, 1fr); }
+  .card .ico { width: 64px; height: 64px; }
+}
+@media (max-width: 380px) {
+  .card { grid-template-columns: minmax(0, 1fr); }
+  .card .ico { width: 44px; height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toran, .mandala svg, .flame, .barat .dhol { animation: none; }
+  .rv { transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="pet" d="M0 -22 C 9 -40, 9 -62, 0 -92 C -9 -62, -9 -40, 0 -22 Z"/>
+    <path id="pet2" d="M0 -60 C 14 -74, 14 -88, 0 -98 C -14 -88, -14 -74, 0 -60 Z"/>
+    <symbol id="i-diya" viewBox="0 0 64 64">
+      <path class="flame" d="M32 6 C 40 18, 41 24, 32 32 C 23 24, 24 18, 32 6 Z" fill="currentColor"/>
+      <path d="M8 34 H56 C 54 48, 44 56, 32 56 C 20 56, 10 48, 8 34 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M20 62 H44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-kalash" viewBox="0 0 64 64">
+      <path d="M22 26 C 10 32, 10 52, 22 58 H42 C 54 52, 54 32, 42 26 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M24 26 V20 H40 V26" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M32 20 C 18 18, 14 8, 20 4 C 26 8, 30 12, 32 20 Z M32 20 C 46 18, 50 8, 44 4 C 38 8, 34 12, 32 20 Z" fill="currentColor"/>
+      <circle cx="32" cy="10" r="5" fill="currentColor"/>
+      <path d="M18 40 H46" stroke="currentColor" stroke-width="2.5"/>
+      <circle cx="32" cy="48" r="3" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-lotus" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+        <path d="M32 10 C 42 22, 42 38, 32 50 C 22 38, 22 22, 32 10 Z"/>
+        <path d="M32 50 C 22 48, 10 40, 8 24 C 20 24, 28 32, 32 50 Z"/>
+        <path d="M32 50 C 42 48, 54 40, 56 24 C 44 24, 36 32, 32 50 Z"/>
+      </g>
+      <path d="M12 56 H52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-dhol" viewBox="0 0 64 64">
+      <ellipse cx="14" cy="32" rx="6" ry="18" fill="none" stroke="currentColor" stroke-width="3"/>
+      <ellipse cx="50" cy="32" rx="6" ry="18" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M14 14 C 28 22, 36 22, 50 14 M14 50 C 28 42, 36 42, 50 50" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M18 18 L24 46 L30 20 L36 46 L42 20 L46 46" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity=".7"/>
+    </symbol>
+    <symbol id="i-thali" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="26" fill="none" stroke="currentColor" stroke-width="3"/>
+      <circle cx="32" cy="32" r="19" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 4"/>
+      <circle cx="32" cy="32" r="5" fill="currentColor"/>
+      <circle cx="32" cy="20" r="3" fill="currentColor"/><circle cx="43" cy="32" r="3" fill="currentColor"/>
+      <circle cx="32" cy="44" r="3" fill="currentColor"/><circle cx="21" cy="32" r="3" fill="currentColor"/>
+    </symbol>
+    <pattern id="bulb" x="0" y="0" width="40" height="34" patternUnits="userSpaceOnUse"><path d="M0 4 Q20 20 40 4" fill="none" stroke="#7f9a3c" stroke-width="1.5"/><circle cx="20" cy="17" r="9" fill="#ffd36b" opacity=".22"/><circle cx="20" cy="17" r="4.5" fill="#ffd36b"/></pattern>
+    <pattern id="garland" x="0" y="0" width="52" height="76" patternUnits="userSpaceOnUse">
+      <path d="M0 5 H52" stroke="#ecc977" stroke-width="3"/>
+      <path d="M26 5 V30" stroke="#ecc977" stroke-width="1.5"/>
+      <circle cx="26" cy="15" r="9" fill="#f4a81d"/>
+      <circle cx="26" cy="15" r="4" fill="#d4401f"/>
+      <circle cx="26" cy="31" r="8" fill="#d4401f"/>
+      <circle cx="26" cy="31" r="3.5" fill="#f4a81d"/>
+      <path d="M26 39 C 17 45, 17 56, 26 70 C 35 56, 35 45, 26 39 Z" fill="#7f9a3c"/>
+      <path d="M26 41 V66" stroke="#260610" stroke-width="1" opacity=".5"/>
+      <circle cx="0" cy="12" r="6" fill="#f4a81d"/><circle cx="52" cy="12" r="6" fill="#f4a81d"/>
+    </pattern>
+  </defs>
+</svg>
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<svg class="toran" viewBox="0 0 800 76" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+  <rect width="800" height="76" fill="url(#garland)"/>
+</svg>
+
+<svg class="lights" viewBox="0 0 800 34" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><rect width="800" height="34" fill="url(#bulb)"/></svg>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="mandala" aria-hidden="true">
+      <svg viewBox="-100 -100 200 200">
+        <g fill="none" stroke="#ecc977" stroke-width="0.6">
+          <circle r="96"/><circle r="22"/><circle r="60" stroke-dasharray="1.5 3"/>
+          <g id="ring"><use href="#pet" transform="rotate(0)"/><use href="#pet" transform="rotate(30)"/><use href="#pet" transform="rotate(60)"/><use href="#pet" transform="rotate(90)"/><use href="#pet" transform="rotate(120)"/><use href="#pet" transform="rotate(150)"/><use href="#pet" transform="rotate(180)"/><use href="#pet" transform="rotate(210)"/><use href="#pet" transform="rotate(240)"/><use href="#pet" transform="rotate(270)"/><use href="#pet" transform="rotate(300)"/><use href="#pet" transform="rotate(330)"/></g>
+          <g stroke="#f4a81d"><use href="#pet2" transform="rotate(15)"/><use href="#pet2" transform="rotate(45)"/><use href="#pet2" transform="rotate(75)"/><use href="#pet2" transform="rotate(105)"/><use href="#pet2" transform="rotate(135)"/><use href="#pet2" transform="rotate(165)"/><use href="#pet2" transform="rotate(195)"/><use href="#pet2" transform="rotate(225)"/><use href="#pet2" transform="rotate(255)"/><use href="#pet2" transform="rotate(285)"/><use href="#pet2" transform="rotate(315)"/><use href="#pet2" transform="rotate(345)"/></g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="shree rv">॥ श्री गणेशाय नमः ॥</div>
+    <!-- diya sits inside the arch -->
+    <p class="invite-line rv">आपको और आपके परिवार को हमारे यहाँ मांगलिक कार्यक्रम में पधारकर वर-वधू को आशीर्वाद देने का सादर निमंत्रण है।</p>
+
+    <div class="arch rv"><svg class="arch-svg" viewBox="0 0 460 560" preserveAspectRatio="none" aria-hidden="true"><path d="M8 556 V230 Q8 190 40 170 Q50 120 90 110 Q110 60 160 58 Q190 20 230 6 Q270 20 300 58 Q350 60 370 110 Q410 120 420 170 Q452 190 452 230 V556 Z" fill="rgba(58,10,23,.85)" stroke="#ecc977" stroke-width="2.5" vector-effect="non-scaling-stroke"/><path transform="translate(16.1 20) scale(.93 .94)" d="M8 556 V230 Q8 190 40 170 Q50 120 90 110 Q110 60 160 58 Q190 20 230 6 Q270 20 300 58 Q350 60 370 110 Q410 120 420 170 Q452 190 452 230 V556 Z" fill="none" stroke="#f4a81d" stroke-width="1.2" stroke-dasharray="4 5" vector-effect="non-scaling-stroke" opacity=".85"/></svg><svg class="diya-top" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-diya"/></svg>
+    <h1 class="names">
+      <span class="n">हरिओम</span>
+      <span class="weds">weds</span>
+      <span class="n g">गंगा</span>
+    </h1>
+    <div class="latin rv">Hariom weds Ganga</div>
+    <div class="range rv"><span>30 नवंबर</span><span aria-hidden="true">✦</span><span>6 दिसंबर 2026</span></div></div>
+
+    <div class="count rv" id="count" aria-live="off">
+      <div><b id="cd">–</b><span>दिन</span></div>
+      <div><b id="ch">–</b><span>घंटे</span></div>
+      <div><b id="cm">–</b><span>मिनट</span></div>
+      <div><b id="cs">–</b><span>सेकंड</span></div>
+    </div>
+    <p class="count-cap rv" id="countcap">शुभ विवाह, 5 दिसंबर में बाकी</p>
+  </header>
+
+  <section aria-labelledby="prog">
+    <div class="sec-head rv">
+      <h2 id="prog">कार्यक्रम</h2>
+      <p>सात दिन, पाँच शुभ अवसर</p>
+      <svg class="divider" viewBox="0 0 180 18" aria-hidden="true"><path d="M0 9 H70 M110 9 H180" stroke="currentColor" stroke-width="1.5"/><circle cx="90" cy="9" r="6" fill="currentColor"/><circle cx="76" cy="9" r="2.5" fill="currentColor"/><circle cx="104" cy="9" r="2.5" fill="currentColor"/></svg>
+    </div>
+
+    <ol class="timeline">
+      <li class="day rv">
+        <div class="date"><b>30</b><span>नवंबर</span><small>सोमवार</small></div>
+        <div class="cards">
+          <article class="card">
+            <svg class="ico" aria-hidden="true"><use href="#i-diya"/></svg>
+            <div><h3>गणेश पूजन</h3><p class="en">Ganesh Puja</p></div>
+          </article>
+        </div>
+      </li>
+
+      <li class="day rv">
+        <div class="date"><b>4</b><span>दिसंबर</span><small>शुक्रवार</small></div>
+        <div class="cards">
+          <article class="card">
+            <svg class="ico" aria-hidden="true"><use href="#i-kalash"/></svg>
+            <div><h3>माताजी पूजन एवं वागा पहनाना</h3><p class="en">Mataji Pujan &amp; Waga Pahnane</p></div>
+          </article>
+        </div>
+      </li>
+
+      <li class="day rv">
+        <div class="date"><b>5</b><span>दिसंबर</span><small>शनिवार</small></div>
+        <div class="cards">
+          <article class="card">
+            <svg class="ico" aria-hidden="true"><use href="#i-lotus"/></svg>
+            <div><h3>गंगोगे भराना</h3><p class="en">Gangoge Bharana</p></div>
+          </article>
+          <article class="card big">
+            <svg class="ico" aria-hidden="true"><use href="#i-dhol"/></svg>
+            <div><h3>बारात प्रस्थान</h3><p class="en">Barat · गाँव सेतखेड़ी</p><p class="when">शाम को</p></div>
+          </article>
+        </div>
+      </li>
+
+      <li class="day rv">
+        <div class="date"><b>6</b><span>दिसंबर</span><small>रविवार</small></div>
+        <div class="cards">
+          <article class="card">
+            <svg class="ico" aria-hidden="true"><use href="#i-thali"/></svg>
+            <div><h3>प्रतिभोज</h3><p class="en">Pratibhoj · Reception Feast</p><p class="when">शाम को</p></div>
+          </article>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="barat rv" aria-labelledby="bt">
+    <svg class="scene" viewBox="0 0 800 290" role="img" aria-label="सेतखेड़ी गाँव की ओर जाती बारात">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c0510"/><stop offset=".55" stop-color="#7a1c22"/><stop offset="1" stop-color="#e8751f"/></linearGradient>
+        <radialGradient id="sunglow"><stop offset="0" stop-color="#ffd36b"/><stop offset="1" stop-color="#ffd36b" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="290" fill="url(#sky)"/>
+      <g fill="#fbefd9">
+        <circle class="tw" cx="60" cy="30" r="1.8"/><circle class="tw t2" cx="140" cy="62" r="1.4"/><circle class="tw t3" cx="230" cy="24" r="1.8"/>
+        <circle class="tw t2" cx="320" cy="52" r="1.4"/><circle class="tw" cx="410" cy="22" r="1.8"/><circle class="tw t3" cx="500" cy="60" r="1.4"/>
+        <circle class="tw" cx="560" cy="34" r="1.8"/><circle class="tw t2" cx="760" cy="70" r="1.4"/><circle class="tw t3" cx="90" cy="96" r="1.2"/>
+      </g>
+      <circle cx="440" cy="185" r="120" fill="url(#sunglow)" opacity=".75"/>
+      <g class="sun-rays" stroke="#ffd36b" stroke-width="2" opacity=".5">
+        <path d="M440 185 m-70 0 h-22 M440 185 m70 0 h22 M440 185 m0 -70 v-22 M440 185 m-50 -50 l-16 -16 M440 185 m50 -50 l16 -16"/>
+      </g>
+      <circle cx="440" cy="185" r="46" fill="#ffc94d"/>
+      <path d="M0 205 Q130 140 270 195 T540 185 T800 178 V290 H0Z" fill="#3a0a17"/>
+      <path d="M0 238 Q200 198 400 232 T800 222 V290 H0Z" fill="#260610"/>
+      <g fill="#12030a">
+        <path d="M600 232 V204 L622 186 L644 204 V232Z"/>
+        <path d="M684 234 V200 L710 178 L736 200 V234Z"/>
+        <path d="M748 232 V210 L766 196 L784 210 V232Z"/>
+        <path d="M646 234 V186 L660 154 L674 186 V234Z"/>
+        <rect x="659" y="136" width="2.5" height="20"/>
+      </g>
+      <path class="flagwave" d="M661.5 136 L682 142 L661.5 148Z" fill="#d4401f"/>
+      <rect class="win" x="616" y="210" width="9" height="9" fill="#ffc94d"/>
+      <rect class="win w2" x="700" y="206" width="9" height="9" fill="#ffc94d"/>
+      <rect class="win" x="716" y="206" width="9" height="9" fill="#ffc94d"/>
+      <rect class="win w2" x="763" y="214" width="8" height="8" fill="#ffc94d"/>
+      <g>
+        <rect x="596" y="22" width="170" height="34" rx="5" fill="#4a0e1a" stroke="#ecc977" stroke-width="1.5"/>
+        <path d="M616 22 V8 M746 22 V8" stroke="#ecc977" stroke-width="1.5"/>
+        <text x="681" y="46" text-anchor="middle" font-family="Yatra One, serif" font-size="20" fill="#f4a81d">सेतखेड़ी गाँव</text>
+      </g>
+      <rect y="262" width="800" height="28" fill="#12030a"/>
+      <g transform="translate(0 266)"><g class="march"><g transform="scale(.82)">
+        
+      <g transform="translate(-250 0)">
+        <rect class="leg" x="-7" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <rect class="leg b" x="2" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <g class="hb">
+          <rect x="-9" y="-72" width="18" height="48" rx="6" fill="#d4401f"/>
+          <circle cx="0" cy="-82" r="9" fill="#12030a"/>
+          <path d="M-12 -86 Q0 -102 12 -86Z" fill="#f4a81d"/>
+        </g>
+      </g>
+        
+      <g transform="translate(-200 0)">
+        <rect class="leg" x="-7" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <rect class="leg b" x="2" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <g class="hb">
+          <rect x="-9" y="-72" width="18" height="48" rx="6" fill="#ecc977"/>
+          <circle cx="0" cy="-82" r="9" fill="#12030a"/>
+          <path d="M-12 -86 Q0 -102 12 -86Z" fill="#d4401f"/>
+        </g>
+      </g>
+        <g transform="translate(-130 0)">
+          <rect class="leg" x="-7" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+          <rect class="leg b" x="2" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+          <g class="hb">
+            <rect x="-9" y="-72" width="18" height="48" rx="6" fill="#12030a"/>
+            <circle cx="0" cy="-82" r="9" fill="#12030a"/>
+            <path d="M-12 -86 Q0 -102 12 -86Z" fill="#d4401f"/>
+            <ellipse cx="10" cy="-44" rx="10" ry="13" fill="#f4a81d" stroke="#12030a" stroke-width="2"/>
+          </g>
+        </g>
+        <g>
+          <rect class="leg" x="-34" y="-50" width="7" height="50" rx="3" fill="#12030a"/>
+          <rect class="leg b" x="-23" y="-50" width="7" height="50" rx="3" fill="#12030a"/>
+          <rect class="leg b" x="14" y="-50" width="7" height="50" rx="3" fill="#12030a"/>
+          <rect class="leg" x="25" y="-50" width="7" height="50" rx="3" fill="#12030a"/>
+          <g class="hb">
+            <ellipse cx="0" cy="-60" rx="40" ry="18" fill="#12030a"/>
+            <path d="M26 -68 L46 -108 L62 -102 L58 -88 L42 -58Z" fill="#12030a"/>
+            <ellipse cx="62" cy="-102" rx="16" ry="7" transform="rotate(28 62 -102)" fill="#12030a"/>
+            <path d="M44 -108 L48 -122 L53 -108Z" fill="#12030a"/>
+            <path d="M-38 -66 Q-66 -56 -60 -22 Q-52 -50 -34 -52Z" fill="#12030a"/>
+            <path d="M-22 -74 Q0 -82 22 -74 L22 -62 Q0 -56 -22 -62Z" fill="#d4401f" stroke="#ecc977" stroke-width="2"/>
+            <rect x="-8" y="-104" width="16" height="32" rx="6" fill="#f4a81d"/>
+            <circle cx="0" cy="-114" r="9" fill="#12030a"/>
+            <path d="M-13 -116 Q0 -138 13 -116Z" fill="#d4401f" stroke="#ecc977" stroke-width="1.5"/>
+          </g>
+        </g>
+        
+      <g transform="translate(130 0)">
+        <rect class="leg" x="-7" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <rect class="leg b" x="2" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <g class="hb">
+          <rect x="-9" y="-72" width="18" height="48" rx="6" fill="#d4401f"/>
+          <circle cx="0" cy="-82" r="9" fill="#12030a"/>
+          <path d="M-12 -86 Q0 -102 12 -86Z" fill="#ecc977"/>
+        </g>
+      </g>
+        
+      <g transform="translate(185 0)">
+        <rect class="leg" x="-7" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <rect class="leg b" x="2" y="-28" width="6" height="28" rx="3" fill="#12030a"/>
+        <g class="hb">
+          <rect x="-9" y="-72" width="18" height="48" rx="6" fill="#f4a81d"/>
+          <circle cx="0" cy="-82" r="9" fill="#12030a"/>
+          <path d="M-12 -86 Q0 -102 12 -86Z" fill="#d4401f"/>
+        </g>
+      </g>
+      </g></g></g>
+    </svg>
+    <h2 id="bt">बारात जाएगी</h2>
+    <div class="village">सेतखेड़ी गाँव</div>
+    <p>5 दिसंबर की शाम, ढोल और बैंड-बाजे के साथ</p>
+  </section>
+
+  <footer class="foot rv">
+    <svg class="divider" viewBox="0 0 180 18" aria-hidden="true"><path d="M0 9 H70 M110 9 H180" stroke="currentColor" stroke-width="1.5"/><circle cx="90" cy="9" r="6" fill="currentColor"/><circle cx="76" cy="9" r="2.5" fill="currentColor"/><circle cx="104" cy="9" r="2.5" fill="currentColor"/></svg>
+    <h2 style="margin-top:18px">आपके आगमन की प्रतीक्षा में</h2>
+    <p>आपकी उपस्थिति ही हमारे लिए सबसे बड़ा आशीर्वाद है। हर कार्यक्रम में पधारिए।</p>
+    <div class="actions">
+      <a class="btn" id="wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp पर भेजें</a>
+      <button class="btn ghost" id="copy" type="button">लिंक कॉपी करें</button>
+    </div>
+    <div class="copied" id="copied" role="status"></div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Countdown to 5 Dec 2026 (IST) */
+  var target = new Date("2026-12-05T00:00:00+05:30").getTime();
+  var el = { d: document.getElementById("cd"), h: document.getElementById("ch"), m: document.getElementById("cm"), s: document.getElementById("cs") };
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      el.d.textContent = el.h.textContent = el.m.textContent = el.s.textContent = "00";
+      document.getElementById("countcap").textContent = "शुभ विवाह का दिन आ गया";
+      return;
+    }
+    var s = Math.floor(diff / 1000);
+    el.d.textContent = Math.floor(s / 86400);
+    el.h.textContent = pad(Math.floor((s % 86400) / 3600));
+    el.m.textContent = pad(Math.floor((s % 3600) / 60));
+    el.s.textContent = pad(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* Scroll reveal: only below-the-fold blocks start hidden; failsafe shows everything */
+  var rv = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  if (!reduce && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove("hide"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    rv.forEach(function (n) {
+      if (n.getBoundingClientRect().top > window.innerHeight * 0.9) { n.classList.add("hide"); io.observe(n); }
+    });
+    setTimeout(function () { rv.forEach(function (n) { n.classList.remove("hide"); }); }, 6000);
+  }
+
+  /* Share */
+  var url = location.href.split("#")[0];
+  var msg = "हरिओम weds गंगा के विवाह का निमंत्रण। 30 नवंबर से 6 दिसंबर 2026। कार्यक्रम देखें: " + url;
+  document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(msg);
+  document.getElementById("copy").addEventListener("click", function () {
+    var out = document.getElementById("copied");
+    function ok() { out.textContent = "लिंक कॉपी हो गया"; }
+    function fail() { out.textContent = "कॉपी नहीं हुआ, ऊपर का पता चुनकर कॉपी करें"; }
+    try { navigator.clipboard.writeText(url).then(ok, fail); } catch (e) { fail(); }
+  });
+
+  /* Twinkling stars in hero */
+  var hero = document.querySelector(".hero");
+  if (hero && !reduce) {
+    for (var k = 0; k < 28; k++) {
+      var st = document.createElement("i");
+      st.className = "star";
+      st.style.left = (Math.random() * 100) + "%";
+      st.style.top = (Math.random() * 100) + "%";
+      st.style.animationDelay = (Math.random() * 3) + "s";
+      var sz = (2 + Math.random() * 3) + "px";
+      st.style.width = sz; st.style.height = sz;
+      hero.appendChild(st);
+    }
+  }
+
+  /* Falling marigold petals */
+  var cv = document.getElementById("petals");
+  if (!cv || reduce) { if (cv) cv.style.display = "none"; return; }
+  var ctx = cv.getContext("2d");
+  var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var colors = ["#f4a81d", "#ecc977", "#d4401f", "#f08a1d"];
+  var petals = [];
+  function size() {
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function make(initial) {
+    return {
+      x: Math.random() * W,
+      y: initial ? Math.random() * H : -20,
+      r: 4 + Math.random() * 6,
+      vy: 0.5 + Math.random() * 0.9,
+      sway: 0.6 + Math.random() * 1.2,
+      ph: Math.random() * Math.PI * 2,
+      rot: Math.random() * Math.PI * 2,
+      vr: (Math.random() - 0.5) * 0.03,
+      c: colors[(Math.random() * colors.length) | 0],
+      a: 0.35 + Math.random() * 0.4
+    };
+  }
+  size();
+  var count = W < 520 ? 16 : 28;
+  for (var i = 0; i < count; i++) petals.push(make(true));
+  window.addEventListener("resize", size);
+  var running = true;
+  document.addEventListener("visibilitychange", function () { running = !document.hidden; if (running) frame(); });
+  function frame() {
+    if (!running) return;
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < petals.length; i++) {
+      var p = petals[i];
+      p.y += p.vy; p.ph += 0.02; p.x += Math.sin(p.ph) * p.sway * 0.5; p.rot += p.vr;
+      if (p.y > H + 20) petals[i] = make(false);
+      ctx.save();
+      ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.globalAlpha = p.a; ctx.fillStyle = p.c;
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r * 0.55, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+</script>
+
+</body></html>
